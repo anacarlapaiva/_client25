@@ -1,9 +1,6 @@
-interface Area {
-  title: string;
-  description: string;
-}
+import { Section } from "../components/ui/Section";
 
-const areas: Area[] = [
+const areas = [
   {
     title: "Psicoterapia infantil e de adolescentes",
     description:
@@ -28,29 +25,32 @@ const areas: Area[] = [
 
 export function Areas() {
   return (
-    <section id="areas" className="py-24 md:py-32 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 md:px-10">
-        <p className="text-sm font-medium tracking-wide mb-4">
-          03 — Áreas de atuação
+    <Section
+      id="areas"
+      label="03 — Áreas de atuação"
+      title="Demandas que acompanho no consultório."
+      intro={
+        <p>
+          Modalidades: presencial em Londrina e Assis (SP); online para
+          adolescentes a partir dos 14 anos.
         </p>
-        <h2 className="text-3xl md:text-4xl mb-16 max-w-2xl">
-          Demandas que costumo acompanhar em atendimento.
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-          {areas.map((area) => (
-            <div key={area.title} className="space-y-3">
-              <h3 className="font-serif text-2xl">{area.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {area.description}
-              </p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-16 text-muted-foreground leading-relaxed max-w-2xl">
-          Modalidades de atendimento: presencial em Londrina e em Assis (SP);
-          atendimento online disponível para adolescentes a partir dos 14 anos.
-        </p>
+      }
+    >
+      <div className="divide-y divide-border border-y border-border">
+        {areas.map((area) => (
+          <div
+            key={area.title}
+            className="grid grid-cols-1 md:grid-cols-[0.9fr_1.1fr] gap-3 md:gap-10 py-8 md:py-10"
+          >
+            <h3 className="font-serif text-2xl md:text-[1.7rem] leading-snug">
+              {area.title}
+            </h3>
+            <p className="text-muted-foreground leading-relaxed text-[15px] md:text-base md:pt-1">
+              {area.description}
+            </p>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

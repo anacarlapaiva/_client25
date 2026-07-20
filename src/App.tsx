@@ -1,6 +1,7 @@
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { Hero } from "./sections/Hero";
+import { About } from "./sections/About";
 import { Interests } from "./sections/Interests";
 import { Areas } from "./sections/Areas";
 import { Approach } from "./sections/Approach";
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <About />
         <Interests />
         <Areas />
         <Approach />

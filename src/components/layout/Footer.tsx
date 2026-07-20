@@ -2,17 +2,28 @@ import { site } from "../../data/site";
 
 export function Footer() {
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-center md:text-left">
-          <p className="font-serif text-xl">{site.name}</p>
+    <footer className="border-t border-border py-10 md:py-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <p className="font-serif text-2xl mb-2">{site.name}</p>
           <p className="text-sm text-muted-foreground">
             {site.title} · {site.crp}
           </p>
+          <p className="text-sm text-muted-foreground mt-1">
+            Londrina · Assis · Online
+          </p>
         </div>
-        <p className="text-sm text-muted-foreground">
-          © {site.year} — Todos os direitos reservados.
-        </p>
+        <div className="md:text-right space-y-1">
+          <p className="text-sm text-muted-foreground">
+            © {site.year} — Todos os direitos reservados.
+          </p>
+          <a
+            href="#hero"
+            className="text-sm text-foreground/60 hover:text-foreground transition-colors inline-block"
+          >
+            Voltar ao topo
+          </a>
+        </div>
       </div>
     </footer>
   );

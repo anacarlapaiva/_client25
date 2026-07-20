@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
 
   --color-background: oklch(95.5% 0.055 100);
   --color-foreground: oklch(31% 0.09 254);
@@ -15,6 +15,7 @@
   --color-accent-foreground: oklch(31% 0.09 254);
   --color-input: oklch(31% 0.09 254 / 0.2);
   --color-ring: oklch(31% 0.09 254 / 0.4);
+  --color-warm: oklch(72% 0.09 75);
 }
 
 @layer base {
@@ -26,6 +27,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -35,7 +38,57 @@
   h4,
   .font-serif {
     font-family: var(--font-serif);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     font-weight: 500;
+    line-height: 1.2;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--color-primary) 18%, transparent);
+  }
+}
+
+@layer utilities {
+  .section-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: color-mix(in oklab, var(--color-foreground) 65%, transparent);
+  }
+
+  .reveal {
+    animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.12s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.24s;
+  }
+
+  .reveal-delay-3 {
+    animation-delay: 0.36s;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3 {
+    animation: none;
   }
 }

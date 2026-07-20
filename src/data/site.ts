@@ -3,9 +3,9 @@ export const site = {
   initials: "R.Q.",
   title: "Psicóloga Clínica",
   crp: "CRP 08/47222",
-  phone: "+55 18 99801-1018",
-  whatsappNumber: "5518998011018",
-  email: "contato@raquelqueiroz.psi.br",
+  phone: "+55 (43) 99122-5366",
+  whatsappNumber: "5543991225366",
+  email: "psi.raquelqueiroz@outlook.com",
   year: new Date().getFullYear(),
 };
 
