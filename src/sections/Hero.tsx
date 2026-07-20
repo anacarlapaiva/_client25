@@ -34,7 +34,7 @@ export function Hero() {
                 Agendar consulta
               </LinkButton>
               <LinkButton href="#about" variant="ghost">
-                Conhecer meu trabalho
+                Conheça meu trabalho
                 <ArrowDown className="w-4 h-4" />
               </LinkButton>
             </div>
