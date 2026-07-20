@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  --color-background: oklch(95.5% 0.055 100);
+  --color-foreground: oklch(31% 0.09 254);
+  --color-border: oklch(31% 0.09 254 / 0.15);
+  --color-primary: oklch(31% 0.09 254);
+  --color-primary-foreground: oklch(95.5% 0.055 100);
+  --color-muted: oklch(92% 0.05 100);
+  --color-muted-foreground: oklch(45% 0.07 254);
+  --color-accent: oklch(88% 0.06 100);
+  --color-accent-foreground: oklch(31% 0.09 254);
+  --color-input: oklch(31% 0.09 254 / 0.2);
+  --color-ring: oklch(31% 0.09 254 / 0.4);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-serif {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+}
